@@ -9,8 +9,8 @@ Dim allMatches As Object
 Dim card_s As String
 Dim loanac As String
 
-card_s = "([0-9]{4}[\s]{1}[0-9]{4}[\s]{1}[0-9]{4}[\s]{1}[0-9]{4})|([0-9]{16})"
-loanac = "([0-9]{10})|([0-9]{12})"
+card_s = "([0-9]{4}[\s]{1}[0-9]{4}[\s]{1}[0-9]{4}[\s]{1}[0-9]{4})|(?:^|\D)(\d{16})(?!\d)"
+loanac = "(?:^|\D)(\d{10})(?!\d)|(?:^|\D)(\d{12})(?!\d)"
 
 With rgx
 .Pattern = card_s & "|" & loanac   ' & "|" &card_mini & "|" &  card & "|"&
